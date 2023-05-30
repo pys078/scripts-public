@@ -11,7 +11,7 @@ do
 	then
 		num=$((num+1))
 		echo "😆 处理第"$num"份视频 "$file" "
-		ffmpeg -i "$file" -vf "something_here_to_replace" ../output_watermark/$file
+		ffmpeg -hwaccel cuda -i "$file" -vf "something_here_to_replace" ../output_watermark/$file
 	else
 		echo "😅 "$file" 这一份视频处理过了"
 	fi
